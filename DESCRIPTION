@@ -1,0 +1,10 @@
+Package: tufterhandout
+Type: Package
+Title: Tufte-style handout templates for Rmarkdown
+Version: 0.1
+Date: 2014-06-25
+Author: Michael Sachs
+Maintainer: Michael Sachs <sachsmc@gmail.com>
+Description: Custom templates and output formats for use with rmarkdown. Produce Edward Tufte-style handouts in pdf or html formats
+License: MIT
+Imports: rmarkdown
