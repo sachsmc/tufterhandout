@@ -27,7 +27,7 @@ The html documents may not display correctly on narrow screens. It seems to look
 
 The second custom hook is `fig.star`. Setting `fig.star = TRUE` creates a full-width figure spanning the main body and the margin. Specify the width and height for best results. 
 
-```{r fig2, tidy = TRUE, fig.width = 12, fig.height = 3, fig.cap = "Full-width figure", fig.star = TRUE}
+```{r fig2, tidy = TRUE, fig.width = 22, fig.height = 3, fig.cap = "Full-width figure", fig.star = TRUE}
 ggplot(faithful, aes(y = eruptions, x = waiting)) + geom_point() + stat_smooth(method = "loess")
 ```
 
