@@ -1,0 +1,42 @@
+---
+title: "Tufte Handouts in rmarkdown"
+author: "Michael Sachs"
+output: 
+    tufterhandout::pdf_tufte_handout
+---
+
+# Introduction
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. ^[For more details on using R Markdown see <http://rmarkdown.rstudio.com>.] This package provides output formats to create "Tufte-style" handouts. 
+
+Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in pdf or html format. The pdf format uses the tufte-handout document class ^[Credit: <http://code.google.com/p/tufte-latex/>]. The html format uses bootstrap with some css to put stuff in the margin. Each uses knitr hooks to specify the types of figures. 
+
+# Usage
+
+To create sidenotes in html, some raw html is required. Place the sidenote content between the tags `<emph class="sidenote"></emph>` to place them in the sidebar. In the pdf version, simply use the pandoc footnote format `^[Content]`.
+
+The package provides two custom hooks for figure placement. The first is `marginfigure`. Set `marginfigure = TRUE` in a chuck option to place a figure in the right margin. Optionally, specify the figure size and include a caption. 
+
+```{r fig1, tidy = TRUE, fig.width = 4, fig.height = 4, echo = TRUE, marginfigure = TRUE, fig.cap = "This is a marginfigure"}
+library(ggplot2)
+ggplot(mtcars, aes(y = mpg, x = wt)) + geom_point() + stat_smooth(method = "lm")
+```
+
+The second custom hook is `fig.star`. Setting `fig.star = TRUE` creates a full-width figure spanning the main body and the margin. Specify the width and height for best results. 
+
+```{r fig2, tidy = TRUE, fig.width = 12, fig.height = 3, fig.cap = "Full-width figure", fig.star = TRUE}
+ggplot(faithful, aes(y = eruptions, x = waiting)) + geom_point() + stat_smooth(method = "loess")
+```
+
+Finally, normal figures are plotted in the main body, with the captions in the margin. The only option necessary here is the caption itself.
+
+```{r fig3, tidy = TRUE, fig.width = 4, fig.height = 4, fig.cap = "Normal figure with caption in the margin"}
+ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = .5)
+```
+
+# Resources
+
+Learn more about rmarkdown: <http://rmarkdown.rstudio.com>
+
+
+

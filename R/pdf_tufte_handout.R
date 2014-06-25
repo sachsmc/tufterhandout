@@ -1,13 +1,29 @@
 #' pdf format for tufte-handout
 #' 
+#' Produces a custom output format function in the style of Edward Tufte's handouts. This uses the 
+#' tufte-handout latex document class.  Main features are plot hooks that put figures in the margin 
+#' (\code{marginfigure = TRUE}), 
+#' creates full-width figures (\code{fig.star = TRUE}), and allows "sidenotes". Sidenotes are used
+#' instead of footnotes, for example \code{^[Content]}. See the 
+#' package vignette for more details.
+#' 
+#' @param fig_width Default figure width
+#' @param fig_height Default figure height
+#' @param fig_crop Crop figures
+#' @param highlight Code highlighting
+#' @param keep_tex Preserve pandoc-generated tex document?
+#' @param latex_engine Which latex engine to use
+#' @param includes Named list of additional content to include in the document
+#' @param pandoc_args Other arguments to pass to pandoc
+#' 
 #' @export
 #' 
+
 
 pdf_tufte_handout <- function(
                          fig_width = 6.5,
                          fig_height = 4.5,
                          fig_crop = TRUE,
-                         fig_caption = TRUE,
                          highlight = "default",
                          keep_tex = FALSE,
                          latex_engine = "pdflatex",
@@ -15,6 +31,7 @@ pdf_tufte_handout <- function(
                          pandoc_args = NULL) {
   
   require(rmarkdown)
+  fig_caption <- TRUE
   # base pandoc options for all PDF output
   args <- c()
   

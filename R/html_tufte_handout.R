@@ -1,5 +1,18 @@
 #' html format for tufte-handout
 #' 
+#' Produces a custom output format function in the style of Edward Tufte's handouts. This
+#' essentially recreates the tufte-handout latex document class using bootstrap. 
+#' Main features are plot hooks that put figures in the margin (\code{marginfigure = TRUE}), 
+#' creates full-width figures (\code{fig.star = TRUE}), and allows "sidenotes". To create a sidenote, 
+#' some raw html is required. Usage is \code{<emph class="sidenote"> Content </emph>}. See the 
+#' package vignette for more details.
+#' 
+#' @param self_contained Include all dependencies
+#' @param theme Bootstrap theme
+#' @param lib_dir Local directory to copy assets
+#' @param mathjax Include mathjax, "local" or "default"
+#' @param pandoc_args Other arguments to pass to pandoc
+#' 
 #' @export
 #' 
 
@@ -7,13 +20,13 @@ html_tufte_handout <- function(self_contained = TRUE,
                                theme = "default",
                                lib_dir = NULL,
                                mathjax = "default",
-                               pandoc_args = NULL,
-                               dependency_resolver = html_dependency_resolver,
-                               copy_resources = FALSE,
-                               extra_dependencies = NULL,
-                               bootstrap_compatible = FALSE,
-                               ...) {
+                               pandoc_args = NULL) {
   require(rmarkdown)
+  dependency_resolver <- html_dependency_resolver
+  copy_resources <- FALSE
+  extra_dependencies <- NULL
+  bootstrap_compatible <- FALSE
+  
   args <- c()
   
  # self contained document
@@ -159,6 +172,7 @@ html_tufte_handout <- function(self_contained = TRUE,
      
    } else {
      
+     if(!is.null(options$fig.cap)) caption <-  options$fig.cap
      return(paste('<img src="', name, '"> <emph class="sidenote">', caption, '</emph>', sep = ''))
      
    }
