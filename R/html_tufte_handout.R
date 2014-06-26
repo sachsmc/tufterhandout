@@ -4,12 +4,13 @@
 #' essentially recreates the tufte-handout latex document class using bootstrap. 
 #' Main features are plot hooks that put figures in the margin (\code{marginfigure = TRUE}), 
 #' creates full-width figures (\code{fig.star = TRUE}), and allows "sidenotes". To create a sidenote, 
-#' some raw html is required. Usage is \code{<emph class="sidenote"> Content </emph>}. See the 
+#' some raw html is required. Usage is \code{<aside> Content </aside>}. See the 
 #' package vignette for more details.
 #' 
 #' @param self_contained Include all dependencies
 #' @param theme Bootstrap theme
 #' @param lib_dir Local directory to copy assets
+#' @param keep_md Keep knitr-generated markdown
 #' @param mathjax Include mathjax, "local" or "default"
 #' @param pandoc_args Other arguments to pass to pandoc
 #' 
@@ -19,6 +20,7 @@
 html_tufte_handout <- function(self_contained = TRUE,
                                theme = "default",
                                lib_dir = NULL,
+                               keep_md = FALSE,
                                mathjax = "default",
                                pandoc_args = NULL) {
   require(rmarkdown)
@@ -151,10 +153,9 @@ html_tufte_handout <- function(self_contained = TRUE,
     output_file
   }
  
- mypan_opts <- pandoc_options(to = "html", args = c(args, "--include-before-body", system.file("html/before_body.html", package = "tufterhandout"), 
-                                                    "--include-after-body", system.file("html/after_body.html", package = "tufterhandout")))  
+ mypan_opts <- pandoc_options(to = "html", args = c(args, "--section-divs", "--include-before-body", system.file("html/header.html", package = "tufterhandout")))  
  
- myknit_opts <- knitr_options(opts_knit = list(width = 50),  knit_hooks = list(plot = function(x, options){
+ myknit_opts <- knitr_options(opts_knit = list(width = 80),  knit_hooks = list(plot = function(x, options){
    name <- paste(options$fig.path, options$label,".png", sep = '')
    if(!is.null(options$fig.cap)){
      
@@ -164,16 +165,16 @@ html_tufte_handout <- function(self_contained = TRUE,
    
    if(!is.null(options$marginfigure) && options$marginfigure){
      
-     return(paste('<div class="marfig"> <img src="', name, '">', caption, '</div>', sep = ''))
+     hadj <- (length(options$code) + 2) * 1.5
+     return(paste('<aside style="margin-top:-', floor(hadj), 'em"> <img src="', name, '">', caption, '</aside>', sep = ''))
      
    }  else if(!is.null(options$fig.star) && options$fig.star) {
-     
-     return(paste('<div class="span12"> <img src="', name, '">', caption, '</div>', sep = ''))
+    
+     return(paste('<div class="fullwidth"> <img src="', name, '"><aside style="margin-top: 0em">', caption, '<aside></div>', sep = ''))
      
    } else {
      
-     if(!is.null(options$fig.cap)) caption <-  options$fig.cap
-     return(paste('<img src="', name, '"> <emph class="sidenote">', caption, '</emph>', sep = ''))
+     return(paste('<p><img src="', name, '"> <aside>', caption, '</aside></p>', sep = ''))
      
    }
  }))
@@ -182,6 +183,7 @@ html_tufte_handout <- function(self_contained = TRUE,
     knitr = myknit_opts,
     pandoc =  mypan_opts,
     clean_supporting = FALSE,
+    keep_md = keep_md,
     pre_processor = pre_processor,
     post_processor = post_processor
   )

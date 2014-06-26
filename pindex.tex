@@ -78,29 +78,35 @@
 \section{Introduction}\label{introduction}
 
 This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. \footnote{For more
+for authoring HTML, PDF, and MS Word documents. This package provides
+output formats to create ``Tufte-style'' handouts. \footnote{For more
   details on using R Markdown see \url{http://rmarkdown.rstudio.com}.}
-This package provides output formats to create ``Tufte-style'' handouts.
 
 Tufte-style handouts make heavy use of the right margin. Our package
 provides templates for creating these types of documents in pdf or html
-format. The pdf format uses the tufte-handout document class \footnote{Credit:
-  \url{http://code.google.com/p/tufte-latex/}}. The html format uses
-bootstrap with some css to put stuff in the margin. Each uses knitr
-hooks to specify the types of figures.
+format. The pdf format uses the tufte-handout document class.\footnote{Credit:
+  \url{http://code.google.com/p/tufte-latex/}}
+
+The html format uses bootstrap with some css to put stuff in the margin.
+Each uses knitr hooks to specify the types of figures. There is also an
+html version of this document. \footnote{\url{http://sachsmc.github.io/tufterhandout}}
 
 \section{Usage}\label{usage}
 
-To create sidenotes in html, some raw html is required. Place the
-sidenote content between the tags
-\texttt{\textless{}emph class="sidenote"\textgreater{}\textless{}/emph\textgreater{}}
+To create sidenotes in html, some raw html is required. We make use of
+the \texttt{aside} tag. Place the sidenote content between the tags
+\texttt{\textless{}aside\textgreater{}\textless{}/aside\textgreater{}}
 to place them in the sidebar. In the pdf version, simply use the pandoc
-footnote format \texttt{\^{}{[}Content{]}}.
+footnote format \texttt{\^{}{[}Content{]}}. Anything can be enclosed in
+the \texttt{aside} tag, even code! In latex, you are limited to inline
+code in the sidenotes. For instance, I can evaluate \texttt{rnorm(1)}.
+\footnote{0.9176}
 
 The package provides two custom hooks for figure placement. The first is
 \texttt{marginfigure}. Set \texttt{marginfigure = TRUE} in a chuck
 option to place a figure in the right margin. Optionally, specify the
-figure size and include a caption.
+figure size and include a caption. Captions are passed through the
+\texttt{fig.cap} chunk option.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -115,9 +121,15 @@ figure size and include a caption.
 \caption{ This is a marginfigure }
 \end{marginfigure}
 
+The html documents have the body set at a fixed width of 960px. Feel
+free to edit the css to suit your needs. Html output supports any of the
+built in Bootstrap themes. Be careful using the fluid grid system, it
+may break the output for narrow screens.
+
 The second custom hook is \texttt{fig.star}. Setting
 \texttt{fig.star = TRUE} creates a full-width figure spanning the main
-body and the margin. Specify the width and height for best results.
+body and the margin. The caption goes in the sidebar under the figure.
+These look pretty sweet! Specify the width and height for best results.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -136,7 +148,7 @@ in the margin. The only option necessary here is the caption itself.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(faithful, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \NormalTok{eruptions)) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{binwidth =} \FloatTok{0.5}\NormalTok{)}
+\KeywordTok{ggplot}\NormalTok{(faithful, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \NormalTok{eruptions)) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{binwidth =} \FloatTok{0.1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
