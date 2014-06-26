@@ -1,11 +1,6 @@
----
-title: "Tufte Handouts in rmarkdown"
-author: "Michael Sachs"
-date: "June 25, 2014"
-output: 
-    tufterhandout::html_tufte_handout:
-        keep_md: true
----
+# Tufte Handouts in rmarkdown
+Michael Sachs  
+June 25, 2014  
 
 # Introduction
 
@@ -26,31 +21,45 @@ The html format uses bootstrap with some css to put stuff in the margin. Each us
 To create sidenotes in html, some raw html is required. We make use of the `aside` tag. Place the sidenote content between the tags `<aside></aside>` to place them in the sidebar. In the pdf version, simply use the pandoc footnote format `^[Content]`. Anything can be enclosed in the `aside` tag, even code!
 
 <aside>
-```{r asidecode}
+
+```r
 rnorm(1)
+```
+
+```
+## [1] -1.485
 ```
 </aside>
 
 The package provides two custom hooks for figure placement. The first is `marginfigure`. Set `marginfigure = TRUE` in a chuck option to place a figure in the right margin. Optionally, specify the figure size and include a caption. Captions are passed as strings through `fig.cap` in the chunk options.
 
-```{r fig1, tidy = TRUE, fig.width = 4, fig.height = 4, echo = TRUE, marginfigure = TRUE, fig.cap = "This is a marginfigure"}
+
+```r
 library(ggplot2)
 ggplot(mtcars, aes(y = mpg, x = wt)) + geom_point() + stat_smooth(method = "lm")
 ```
+
+<aside style="margin-top:-6em"> <img src="./index_files/figure-html/fig1.png"><p class="caption">This is a marginfigure</p></aside>
 
 The html documents have the body set at a fixed width of 960px. Feel free to edit the css to suit your needs. Html output supports any of the built in Bootstrap themes. Be careful using the fluid grid system, it may break the output for narrow screens. 
 
 The second custom hook is `fig.star`. Setting `fig.star = TRUE` creates a full-width figure spanning the main body and the margin. The caption goes in the sidebar under the figure. These look pretty sweet!  Specify the width and height for best results. 
 
-```{r fig2, tidy = TRUE, fig.width = 22, fig.height = 3, fig.cap = "Full-width figure", fig.star = TRUE}
+
+```r
 ggplot(faithful, aes(y = eruptions, x = waiting)) + geom_point() + stat_smooth(method = "loess")
 ```
 
+<div class="fullwidth"> <img src="./index_files/figure-html/fig2.png"><aside style="margin-top: 0em"><p class="caption">Full-width figure</p><aside></div>
+
 Finally, normal figures are plotted in the main body, with the captions in the margin. The only option necessary here is the caption itself.
 
-```{r fig3, tidy = TRUE, fig.width = 8, fig.height = 3, fig.cap = "Normal figure with caption in the margin"}
-ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = .1)
+
+```r
+ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = 0.1)
 ```
+
+<p><img src="./index_files/figure-html/fig3.png"> <aside><p class="caption">Normal figure with caption in the margin</p></aside></p>
 
 # Resources
 

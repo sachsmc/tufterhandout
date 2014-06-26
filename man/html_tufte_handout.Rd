@@ -4,7 +4,8 @@
 \title{html format for tufte-handout}
 \usage{
 html_tufte_handout(self_contained = TRUE, theme = "default",
-  lib_dir = NULL, mathjax = "default", pandoc_args = NULL)
+  lib_dir = NULL, keep_md = FALSE, mathjax = "default",
+  pandoc_args = NULL)
 }
 \arguments{
 \item{self_contained}{Include all dependencies}
@@ -12,6 +13,8 @@ html_tufte_handout(self_contained = TRUE, theme = "default",
 \item{theme}{Bootstrap theme}
 
 \item{lib_dir}{Local directory to copy assets}
+
+\item{keep_md}{Keep knitr-generated markdown}
 
 \item{mathjax}{Include mathjax, "local" or "default"}
 
@@ -22,7 +25,7 @@ Produces a custom output format function in the style of Edward Tufte's handouts
 essentially recreates the tufte-handout latex document class using bootstrap.
 Main features are plot hooks that put figures in the margin (\code{marginfigure = TRUE}),
 creates full-width figures (\code{fig.star = TRUE}), and allows "sidenotes". To create a sidenote,
-some raw html is required. Usage is \code{<emph class="sidenote"> Content </emph>}. See the
+some raw html is required. Usage is \code{<aside> Content </aside>}. See the
 package vignette for more details.
 }
 
