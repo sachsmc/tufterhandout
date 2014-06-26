@@ -1,0 +1,72 @@
+    .caption {
+     font-size: smaller;
+    }
+  
+html {
+  min-width: 1040px;
+}
+
+body {
+  background: #fcfcfa;
+  color: #333;
+  margin: 1em auto 4em auto;
+  position: relative;
+  width: 960px;
+}
+
+body > pre {
+    width: 720px;
+}
+
+aside > pre {
+  width: 180px;
+}
+    
+header aside,
+footer aside {
+  float: left;
+  margin-right: .5em;
+}
+
+header aside:after,
+footer aside:after {
+  padding-left: .5em;
+  content: "/";
+}
+
+footer {
+  margin-top: 8em;
+}
+
+aside {
+  font-size: small;
+  right: 0;
+  position: absolute;
+  width: 180px;
+}
+
+
+div > p, li > p {
+  line-height: 1.5em;
+}
+
+div > p, li > p {
+  width: 720px;
+}
+    
+.fullwidth {
+    width: 960px;
+}
+
+body > blockquote {
+  width: 640px;
+}
+
+blockquote q {
+  display: block;
+  font-style: oblique;
+}
+
+li {
+  width: 680px;
+}

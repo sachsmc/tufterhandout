@@ -17,7 +17,7 @@ When authoring a document in rmarkdown, simply specify the output format in the 
 output: 
     tufterhandout::html_tufte_handout
 ```
-In html, sidenotes are created with the tag `<emph class="sidenote"></emph>`. Margin figures use the knitr option `marginfigure = TRUE` and full width figures use the knitr option `fig.star = TRUE`. Make use of the `fig.cap` option to specify the figure captions. 
+In html, sidenotes are created with the tag `<aside></aside>`. You can even put code chunks in `aside`. Margin figures use the knitr option `marginfigure = TRUE` and full width figures use the knitr option `fig.star = TRUE`. Make use of the `fig.cap` option to specify the figure captions. 
 
 or
 
