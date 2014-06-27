@@ -126,6 +126,22 @@ li {
 <h2 class="author">Michael Sachs</h2>
 <h3 class="date">June 25, 2014</h3>
 </div>
+<style type="text/css">
+header {
+
+width: 160px;
+position: fixed;
+float: left;
+margin-left: -160px;
+
+}
+</style>
+
+<header>
+<a href="http://github.com/sachsmc/tufterhandout">View on github</a>
+</header>
+
+
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. This package provides output formats to create &quot;Tufte-style&quot; handouts.</p>
@@ -150,7 +166,7 @@ Check out the <a href="pindex.pdf">pdf version</a>!
 <aside>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] -1.485</code></pre>
+<pre><code>## [1] 0.8148</code></pre>
 </aside>
 
 <p>The package provides two custom hooks for figure placement. The first is <code>marginfigure</code>. Set <code>marginfigure = TRUE</code> in a chuck option to place a figure in the right margin. Optionally, specify the figure size and include a caption. Captions are passed as strings through <code>fig.cap</code> in the chunk options.</p>

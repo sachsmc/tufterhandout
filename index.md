@@ -2,6 +2,22 @@
 Michael Sachs  
 June 25, 2014  
 
+<style type = "text/css">
+header {
+
+width: 160px;
+position: fixed;
+float: left;
+margin-left: -160px;
+
+}
+</style>
+
+<header>
+<a href="http://github.com/sachsmc/tufterhandout">View on github</a>
+</header>
+
+
 # Introduction
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. This package provides output formats to create "Tufte-style" handouts. 
@@ -27,7 +43,7 @@ rnorm(1)
 ```
 
 ```
-## [1] -1.485
+## [1] 0.8148
 ```
 </aside>
 
