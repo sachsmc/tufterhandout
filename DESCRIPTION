@@ -8,5 +8,6 @@ Maintainer: Michael Sachs <sachsmc@gmail.com>
 Description: Custom templates and output formats for use with rmarkdown.
     Produce Edward Tufte-style handouts in pdf or html formats
 License: MIT
-Imports:
-    rmarkdown
+URL: http://sachsmc.github.io/tufterhandout
+Depends:
+    rmarkdown, htmltools
