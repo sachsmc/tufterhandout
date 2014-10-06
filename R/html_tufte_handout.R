@@ -1,3 +1,7 @@
+#' @import htmltools
+#' @import rmarkdown
+NULL
+
 #' html format for tufte-handout
 #' 
 #' Produces a custom output format function in the style of Edward Tufte's handouts. This
@@ -23,7 +27,7 @@ html_tufte_handout <- function(self_contained = TRUE,
                                keep_md = FALSE,
                                mathjax = "default",
                                pandoc_args = NULL) {
-  require(rmarkdown)
+  
   dependency_resolver <- html_dependency_resolver
   copy_resources <- FALSE
   extra_dependencies <- NULL
