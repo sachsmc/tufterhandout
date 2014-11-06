@@ -1,7 +1,7 @@
 ---
 title: "Tufte Handouts in rmarkdown"
 author: "Michael Sachs"
-date: "June 25, 2014"
+date: "`r Sys.Date()`"
 output: 
     tufterhandout::html_tufte_handout:
         keep_md: true
