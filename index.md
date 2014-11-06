@@ -1,6 +1,6 @@
 # Tufte Handouts in rmarkdown
 Michael Sachs  
-June 25, 2014  
+`r Sys.Date()`  
 
 <style type = "text/css">
 header {
@@ -43,7 +43,7 @@ rnorm(1)
 ```
 
 ```
-## [1] 0.08815
+## [1] -0.3950161
 ```
 </aside>
 
@@ -55,7 +55,7 @@ library(ggplot2)
 ggplot(mtcars, aes(y = mpg, x = wt)) + geom_point() + stat_smooth(method = "lm")
 ```
 
-<aside style="margin-top:-6em"> <img src="./index_files/figure-html/fig1.png"><p class="caption">This is a marginfigure</p></aside>
+<aside style="margin-top:-6em"> <img src="./index_files/figure-html/fig1-1.png"><p class="caption">This is a marginfigure</p></aside>
 
 The html documents have the body set at a fixed width of 960px. Feel free to edit the css to suit your needs. Html output supports any of the built in Bootstrap themes. Be careful using the fluid grid system, it may break the output for narrow screens. 
 
@@ -66,7 +66,7 @@ The second custom hook is `fig.star`. Setting `fig.star = TRUE` creates a full-w
 ggplot(faithful, aes(y = eruptions, x = waiting)) + geom_point() + stat_smooth(method = "loess")
 ```
 
-<div class="fullwidth"> <img src="./index_files/figure-html/fig2.png"><aside style="margin-top: 0em"><p class="caption">Full-width figure</p><aside></div>
+<div class="fullwidth"> <img src="./index_files/figure-html/fig2-1.png"><aside style="margin-top: 0em"><p class="caption">Full-width figure</p><aside></div>
 
 Finally, normal figures are plotted in the main body, with the captions in the margin. The only option necessary here is the caption itself.
 
@@ -75,7 +75,7 @@ Finally, normal figures are plotted in the main body, with the captions in the m
 ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = 0.1)
 ```
 
-<p><img src="./index_files/figure-html/fig3.png"> <aside><p class="caption">Normal figure with caption in the margin</p></aside></p>
+<p><img src="./index_files/figure-html/fig3-1.png"> <aside><p class="caption">Normal figure with caption in the margin</p></aside></p>
 
 # Resources
 
