@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Michael Sachs" />
-  <meta name="date" content="2014-06-25" />
+  <meta name="date" content="2014-11-06" />
   <title>Tufte Handouts in rmarkdown</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -124,7 +124,7 @@ li {
 <div id="header">
 <h1 class="title">Tufte Handouts in rmarkdown</h1>
 <h2 class="author">Michael Sachs</h2>
-<h3 class="date">June 25, 2014</h3>
+<h3 class="date">2014-11-06</h3>
 </div>
 <style type="text/css">
 header {
@@ -159,7 +159,7 @@ Check out the <a href="pindex.pdf">pdf version</a>!
 <p>To create sidenotes in html, some raw html is required. We make use of the <code>aside</code> tag. Place the sidenote content between the tags <code>&lt;aside&gt;&lt;/aside&gt;</code> to place them in the sidebar. In the pdf version, simply use the pandoc footnote format <code>^[Content]</code>. Anything can be enclosed in the <code>aside</code> tag, even code!</p>
 <aside>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 0.08815</code></pre>
+<pre><code>## [1] -0.3950161</code></pre>
 </aside>
 <p>The package provides two custom hooks for figure placement. The first is <code>marginfigure</code>. Set <code>marginfigure = TRUE</code> in a chuck option to place a figure in the right margin. Optionally, specify the figure size and include a caption. Captions are passed as strings through <code>fig.cap</code> in the chunk options.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
