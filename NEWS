@@ -1,3 +1,9 @@
+# tufterhandout 1.2
+
+  * Massive code simplification
+  * No more dependency on htmltools
+  * Removed pdf_tufte_handout because that is included with rmarkdown
+
 # tufterhandout 1.1
 
   * fix to be compatible with htmltools_0.2.6
