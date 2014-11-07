@@ -3,3 +3,4 @@
 .RData
 .Rbuildignore
 tufte_handout.Rproj
+.travis.yml

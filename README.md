@@ -1,6 +1,8 @@
 tufterhandout
 =============
 
+[![Build Status](https://travis-ci.org/sachsmc/tufterhandout.png?branch=master)](https://travis-ci.org/sachsmc/tufterhandout)
+
 Output formats for Tufte-style handouts in html for Rmarkdown. See it in action here <http://sachsmc.github.io/tufterhandout>. 
 
 ## Installation
