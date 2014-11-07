@@ -1,7 +1,7 @@
 tufterhandout
 =============
 
-Output formats for Tufte-style handouts in pdf and html for Rmarkdown. See it in action here <http://sachsmc.github.io/tufterhandout>. 
+Output formats for Tufte-style handouts in html for Rmarkdown. See it in action here <http://sachsmc.github.io/tufterhandout>. 
 
 ## Installation
 
@@ -19,13 +19,11 @@ output:
 ```
 In html, sidenotes are created with the tag `<aside></aside>`. You can even put code chunks in `aside`. Margin figures use the knitr option `marginfigure = TRUE` and full width figures use the knitr option `fig.star = TRUE`. Make use of the `fig.cap` option to specify the figure captions. 
 
-or
+See the help files for complete options and see the [homepage](http://sachsmc.github.io/tufterhandout) for an example. Options can be passed via the header:
 
 ```
 output: 
-    tufterhandout::pdf_tufte_handout
+    tufterhandout::html_tufte_handout:
+        keep_md: true
+        theme: cerulean
 ```
-
-In pdf format, footnotes are replaced with sidenotes. You can use the pandoc command `^[sidenote content goes in here]`. The same options for figures are there. 
-
-See the help files for complete options. 

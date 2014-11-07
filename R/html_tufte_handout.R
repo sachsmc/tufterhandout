@@ -31,8 +31,8 @@ html_tufte_handout <- function(self_contained = TRUE,
 
  mypan_opts <- pandoc_options(to = "html", args = c("--section-divs", "--css", system.file("tufterhandout.css", package = "tufterhandout")))
 
- myknit_opts <- knitr_options(opts_knit = list(width = 80),  knit_hooks = list(plot = function(x, options){
-   name <- paste0(knitr::fig_path(options = options), ".png")
+ myknit_opts <- knitr_options(opts_knit = list(width = 80),  knit_hooks = list(plot = function(name, options){
+
    if(!is.null(options$fig.cap)){
 
      caption <-  paste('<p class="caption">', options$fig.cap, '</p>', sep = "")

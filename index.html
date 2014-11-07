@@ -79,7 +79,7 @@ margin-left: -160px;
 <aside>
 For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.
 </aside>
-<p>Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in pdf or html format. The pdf format uses the tufte-handout document class.</p>
+<p>Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in html format. The pdf format is now part of <code>rmarkdown</code> and uses the tufte-handout document class.</p>
 <aside>
 Credit: <a href="http://code.google.com/p/tufte-latex/" class="uri">http://code.google.com/p/tufte-latex/</a>
 </aside>
@@ -93,7 +93,7 @@ Check out a <a href="http://rmarkdown.rstudio.com/examples/tufte-handout.pdf">pd
 <p>To create sidenotes in html, some raw html is required. We make use of the <code>aside</code> tag. Place the sidenote content between the tags <code>&lt;aside&gt;&lt;/aside&gt;</code> to place them in the sidebar. In the pdf version, simply use the pandoc footnote format <code>^[Content]</code>. Anything can be enclosed in the <code>aside</code> tag, even code!</p>
 <aside>
 <pre class="r"><code>rnorm(1)</code></pre>
-<pre><code>## [1] -0.2372</code></pre>
+<pre><code>## [1] 0.3934</code></pre>
 </aside>
 <p>The package provides two custom hooks for figure placement. The first is <code>marginfigure</code>. Set <code>marginfigure = TRUE</code> in a chuck option to place a figure in the right margin. Optionally, specify the figure size and include a caption. Captions are passed as strings through <code>fig.cap</code> in the chunk options.</p>
 <pre class="r"><code>library(ggplot2)

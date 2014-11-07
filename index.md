@@ -17,14 +17,13 @@ margin-left: -160px;
 <a href="http://github.com/sachsmc/tufterhandout">View on github</a>
 </header>
 
-
 # Introduction
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. This package provides output formats to create "Tufte-style" handouts. 
 
 <aside>For more details on using R Markdown see <http://rmarkdown.rstudio.com>.</aside> 
 
-Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in pdf or html format. The pdf format uses the tufte-handout document class.
+Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in html format. The pdf format is now part of `rmarkdown` and uses the tufte-handout document class.
 
 <aside>Credit: <http://code.google.com/p/tufte-latex/></aside>
 
@@ -43,7 +42,7 @@ rnorm(1)
 ```
 
 ```
-## [1] -0.2372
+## [1] 0.3934
 ```
 </aside>
 
@@ -80,6 +79,7 @@ ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = 0.1)
 # Resources
 
 ### Learn more about rmarkdown: <http://rmarkdown.rstudio.com>
+
 
 
 

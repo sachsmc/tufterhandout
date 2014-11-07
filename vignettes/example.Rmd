@@ -14,7 +14,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 <aside>For more details on using R Markdown see <http://rmarkdown.rstudio.com>.</aside> 
 
-Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in pdf or html format. The pdf format uses the tufte-handout document class.
+Tufte-style handouts make heavy use of the right margin. Our package provides templates for creating these types of documents in html format. The pdf format is now part of `rmarkdown` and uses the tufte-handout document class.
 
 <aside>Credit: <http://code.google.com/p/tufte-latex/></aside>
 
