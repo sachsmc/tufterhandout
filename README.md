@@ -7,6 +7,14 @@ Output formats for Tufte-style handouts in html for Rmarkdown. See it in action 
 
 ## Installation
 
+From CRAN
+
+```r
+install("tufterhandout")
+```
+
+Or from Github:
+
 ```r
 devtools::install_github("tufterhandout", "sachsmc")
 ```
