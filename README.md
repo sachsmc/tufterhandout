@@ -10,7 +10,7 @@ Output formats for Tufte-style handouts in html for Rmarkdown. See it in action 
 From CRAN
 
 ```r
-install("tufterhandout")
+install.packages("tufterhandout")
 ```
 
 Or from Github:
