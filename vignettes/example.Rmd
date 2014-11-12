@@ -1,26 +1,12 @@
 ---
-title: "Tufte-style HTML in rmarkdown"
-author: "Michael Sachs"
-date: "`r Sys.Date()`"
-output: 
-    tufterhandout::html_tufte_handout:
-        keep_md: true
+title: "example"
+output: tufterhandout::html_tufte_handout
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Tufte-style HTML in rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
-<style type = "text/css">
-header {
-
-width: 160px;
-position: fixed;
-float: left;
-margin-left: -160px;
-
-}
-</style>
-
-<header>
-<a href="http://github.com/sachsmc/tufterhandout">View on github</a>
-</header>
 
 # Introduction
 
@@ -70,7 +56,6 @@ ggplot(faithful, aes(x = eruptions)) + geom_histogram(binwidth = .1)
 # Resources
 
 ### Learn more about rmarkdown: <http://rmarkdown.rstudio.com>
-
 
 
 
