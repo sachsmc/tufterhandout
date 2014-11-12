@@ -1,7 +1,7 @@
     .caption {
      font-size: smaller;
     }
-  
+
 html {
   min-width: 1040px;
 }
@@ -14,14 +14,6 @@ body {
   width: 960px;
 }
 
-body > pre {
-    width: 720px;
-}
-
-aside > pre {
-  width: 180px;
-}
-    
 header aside,
 footer aside {
   float: left;
@@ -39,10 +31,27 @@ footer {
 }
 
 aside {
-  font-size: small;
+  font-size: smaller;
+  line-height: 1em;
   right: 0;
   position: absolute;
   width: 180px;
+  margin-top: -5em;
+}
+
+aside > pre > code {
+font-size: smaller;
+line-height: 1em;
+}
+
+div > pre, body > pre {
+    width: 720px;
+}
+
+aside > pre {
+  width: 180px;
+  padding: 5px;
+  margin: 5px;
 }
 
 
@@ -53,7 +62,7 @@ div > p, li > p {
 div > p, li > p {
   width: 720px;
 }
-    
+
 .fullwidth {
     width: 960px;
 }
@@ -70,3 +79,4 @@ blockquote q {
 li {
   width: 680px;
 }
+
