@@ -29,7 +29,19 @@ html_tufte_handout <- function(self_contained = TRUE,
                                mathjax = "default",
                                pandoc_args = NULL, ...) {
 
- mypan_opts <- pandoc_options(to = "html", args = c("--section-divs", "--css", system.file("tufterhandout.css", package = "tufterhandout")))
+
+ tufte_css <- system.file("tufterhandout.css", package = "tufterhandout")
+
+ if(identical(.Platform$OS.type, "windows")){
+
+    i <- grep(' ', tufte_css)
+    if (length(i))
+      path[i] <- utils::shortPathName(tufte_css[i])
+    tufte_css <- gsub('/', '\\\\', tufte_css)
+
+ }
+
+ mypan_opts <- pandoc_options(to = "html", args = c("--section-divs", "--css", tufte_css))
 
  myknit_opts <- knitr_options(opts_knit = list(width = 80),  knit_hooks = list(plot = function(name, options){
 

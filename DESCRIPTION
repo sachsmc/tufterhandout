@@ -12,7 +12,8 @@ License: MIT + file LICENSE
 URL: http://sachsmc.github.io/tufterhandout
 Depends:
     rmarkdown,
-    knitr
+    knitr,
+    utils
 Suggests:
     ggplot2
 VignetteBuilder: knitr
