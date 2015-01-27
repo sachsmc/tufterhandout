@@ -1,3 +1,8 @@
+tufterhandout 1.2.1
+-------------
+  * Fix path issue on windows
+  * Add tests
+
 tufterhandout 1.2
 ------------------
 

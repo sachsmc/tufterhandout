@@ -1,0 +1,13 @@
+citHeader("To cite tufterhandout in publications use:")
+
+year = sub('.*(2[[:digit:]]{3})-.*', '\\1', meta$Date, perl = TRUE)
+vers = paste('R package version', meta$Version)
+
+citEntry(entry = "Manual",
+ title = paste('tufterhandout:', meta$Title),
+  author = 'Michael C. Sachs',
+  year = year,
+  note = vers,
+  url = meta$URL,
+  textVersion = paste('Michael C. Sachs (', year, '). tufterhandout: ', meta$Title, '. ', vers, '.', sep = '')
+)
