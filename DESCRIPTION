@@ -1,6 +1,6 @@
 Package: tufterhandout
 Type: Package
-Title: Tufte-style html document format for rmarkdown
+Title: Tufte-style HTML Document Format for rmarkdown
 Version: 1.2.1
 Date: 2015-01-27
 Author: Michael C Sachs
