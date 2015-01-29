@@ -2,6 +2,7 @@ tufterhandout
 =============
 
 [![Build Status](https://travis-ci.org/sachsmc/tufterhandout.png?branch=master)](https://travis-ci.org/sachsmc/tufterhandout)
+[![DOI](https://zenodo.org/badge/9473/sachsmc/tufterhandout.svg)](http://dx.doi.org/10.5281/zenodo.14679)
 
 Output formats for Tufte-style handouts in html for Rmarkdown. See it in action here <http://sachsmc.github.io/tufterhandout>. 
 
