@@ -48,7 +48,7 @@ html_tufte_handout <- function(self_contained = TRUE,
 
    } else { caption <- "" }
 
-   if(!is.null(options$marginfigure) && options$marginfigure){
+   if((!is.null(options$fig.margin) && options$fig.margin) || (!is.null(options$marginfigure) && options$marginfigure)){
 
      hadj <- (length(options$code) + 2) * 1.5
      return(paste('<aside style="margin-top:-', floor(hadj), 'em"> <img src="', name, '">', caption, '</aside>', sep = ''))
